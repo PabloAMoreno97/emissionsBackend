@@ -14,7 +14,7 @@ class Command(BaseCommand):
         activities = ['Transport', 'Energy', 'Agriculture', 'Industry', 'Residential']
         emission_types = ['CO2', 'CH4', 'N2O', 'HFC', 'PFC', 'SF6']
 
-        records_to_create = 10000
+        records_to_create = 100
 
         emissions = []
         country_instances = [Country.objects.get_or_create(name=country) for country in countries]
