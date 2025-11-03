@@ -8,12 +8,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-COPY entrypoint.sh /entrypoint.sh
-
 COPY . .
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY scripts/entrypoint.sh scripts/entrypoint.sh
+RUN chmod +x scripts/entrypoint.sh
 
 EXPOSE 8000
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["scripts/entrypoint.sh"]
