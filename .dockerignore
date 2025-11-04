@@ -13,20 +13,7 @@ __pycache__/
 *.bak
 *.tmp
 
-.DS_Store
-.idea
-.vscode
-*.code-workspace
-
 .git
 .gitignore
-
-.dockerignore
-
-media/
-staticfiles/
-static/
-build/
-dist/
 
 Thumbs.db
