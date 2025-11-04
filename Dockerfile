@@ -10,8 +10,9 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . .
 
-COPY scripts/entrypoint.sh scripts/entrypoint.sh
-RUN chmod +x scripts/entrypoint.sh
+# Copia el entrypoint al raíz del contenedor
+COPY scripts/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 8000
-ENTRYPOINT ["scripts/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
