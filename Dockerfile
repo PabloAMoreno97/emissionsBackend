@@ -10,8 +10,6 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . .
 
-COPY scripts/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
 EXPOSE 8000
-ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["sh", "-c", "python manage.py migrate --noinput && python manage.py seed_emissions || true && gunicorn --bind 0.0.0.0:8000 config.wsgi:application"]
