@@ -46,6 +46,11 @@ Apply migrations to create the local SQLite database:
 python manage.py migrate
 ```
 
+Populate the database with some test data:
+```
+python manage.py seed_emissions
+```
+
 ### 2.2 Starting the Development Server
 To start the application locally, navigate to the project directory in your terminal and run:
 
